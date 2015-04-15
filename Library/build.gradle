@@ -1,7 +1,16 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.0.0'
+    }
+}
+
 apply plugin: 'com.android.library'
 
 dependencies {
-    compile 'com.android.support:support-v4:20.0.0'
+    compile 'com.android.support:support-v4:21.0.3'
 }
 
 android {
@@ -11,6 +20,12 @@ android {
     defaultConfig {
         minSdkVersion 4
         targetSdkVersion 21
+        versionCode 1
+        versionName "1.1.1"
+    }
+
+    lintOptions {
+        abortOnError false
     }
 
     sourceSets {
@@ -22,3 +37,5 @@ android {
         }
     }
 }
+
+apply from: 'https://raw.github.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle'
